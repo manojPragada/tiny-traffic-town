@@ -18,7 +18,7 @@ Open http://127.0.0.1:8000. Keep the terminal running; Ctrl+C stops it. Serve ov
 
 ## Controls
 
-Toggle the green direction to control the intersection, add cars, pause/resume, or reset. Waiting vehicles stop before the intersection when their light is red.
+Request the other green direction to control the intersection, add cars, pause/resume, step 0.1 seconds, or reset. A switch first enters all-red for at least two simulated seconds, and only grants the requested green once committed vehicles leave the crossing zone. Upstream traffic waits at its stop line. The waiting count includes tightly queued followers. If paused, use Start or Step to advance signal clearance. Reduced motion disables animated running but keeps manual stepping; hiding the tab pauses the simulation.
 
 ## Project structure
 
@@ -51,7 +51,7 @@ Semantic controls, visible keyboard focus, a skip link, responsive layouts and r
 
 ## Data, assets and limitations
 
-This is a simplified two-axis, one-way junction model. No road drawing, lane changes, turns, collision physics or traffic-engineering accuracy. This is not a road-design or safety tool.
+This is a simplified two-axis, one-way junction model. No road drawing, lane changes, turns, full collision physics or traffic-engineering accuracy. The clearance rule is only for this two-lane demo and is not an engineering signal plan. This is not a road-design or safety tool.
 
 All graphics and synthetic fixtures are original code in this repository. No third-party geographic dataset or media assets are bundled. No external API terms are relied upon in this prototype. Provider adapters will be documented and attributed before use.
 
@@ -74,3 +74,4 @@ Use small, reviewable changes with a clear user benefit. Add model tests when be
 ## License
 
 A redistribution license has not yet been selected. Public visibility alone does not grant an open-source license.
+

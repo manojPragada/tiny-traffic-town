@@ -23,3 +23,6 @@ Initial prototype created 2026-10-17. Re-read repository contents and latest com
 - Local HTTP document/module/style serving and HTML anchor/ID integrity checked.
 - Browser rendering and interaction QA **not completed**: no installed Chromium; browser download failed. No screenshot is claimed.
 - Implementation is proposed on `feat/initial-experience` for review; inspect open PRs before starting the next change. Prioritize desktop/mobile and keyboard browser review next.
+
+
+2026-10-18: Added all-red signal transitions with committed-vehicle clearance, fuller waiting counts, manual single-step mode, invalid-delta handling and hidden-tab/live reduced-motion pausing. Nine model tests pass. Full collision physics, road editing and browser review remain pending.
