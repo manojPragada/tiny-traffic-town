@@ -10,3 +10,4 @@ test('signal request enters all-red phase before switching',()=>{const initial=i
 test('committed traffic clears before the next green',()=>{let state={...initialState(),cars:[{id:1,lane:'east',position:331},{id:2,lane:'south',position:179}]};state=requestSignal(state,'south');for(let i=0;i<20;i++)state=step(state,.1);assert.equal(state.green,null);assert.equal(state.cars.find(car=>car.id===2).position,180);state=step(state,.1);assert.equal(state.green,'south');});
 test('waiting metric includes queued followers but not approaching cars',()=>{const state={...initialState(),cars:[{id:1,lane:'south',position:180},{id:2,lane:'south',position:148},{id:3,lane:'south',position:80}]};assert.equal(waitingCount(state),2);});
 test('invalid elapsed time cannot corrupt vehicle positions',()=>{const state=step(initialState(),NaN);assert.ok(state.cars.every(car=>Number.isFinite(car.position)));assert.equal(requestSignal(state,'invalid'),state);});
+

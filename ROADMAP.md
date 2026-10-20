@@ -14,6 +14,8 @@
 
 ## Continuity
 
+2026-10-20: Added repeatable Playwright regression checks and a public-repository-only CI workflow. Desktop, mobile and motion-enabled scenarios passed locally using Chromium 153; model tests and syntax checks passed. Screenshots generated locally for inspection. Earlier browser-unavailable notes below are historical. No deployment or live-provider validation performed. Next: expand browser coverage and review the existing PR before merging.
+
 Initial prototype created 2026-10-17. Re-read repository contents and latest commits before continuing. No hosted deployment. No live data integrations.
 
 ## Verification
@@ -26,3 +28,4 @@ Initial prototype created 2026-10-17. Re-read repository contents and latest com
 
 
 2026-10-18: Added all-red signal transitions with committed-vehicle clearance, fuller waiting counts, manual single-step mode, invalid-delta handling and hidden-tab/live reduced-motion pausing. Nine model tests pass. Full collision physics, road editing and browser review remain pending.
+

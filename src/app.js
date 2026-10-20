@@ -20,3 +20,4 @@ function tick(time){
 function motionPreference(){if(reduced.matches)stop('Reduced motion enabled. Use Step 0.1s to advance manually.');$('#play').disabled=reduced.matches;}
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop('Simulation paused while this tab is hidden.');});
 reduced.addEventListener('change',motionPreference);render();motionPreference();
+
