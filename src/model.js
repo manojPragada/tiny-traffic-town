@@ -29,4 +29,12 @@ export function waitingCount(state){
  }
  return count;
 }
+export function congestionLevel(state){
+ const active=state.cars.length;
+ const waiting=waitingCount(state);
+ const ratio=active===0?0:waiting/active;
+ const label=ratio>=.6?'HEAVY':ratio>=.25?'BUILDING':active===0?'CLEAR':'FLOWING';
+ return {label,ratio,waiting,active};
+}
+
 

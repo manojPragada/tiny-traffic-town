@@ -7,7 +7,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'playwright');
 const root=path.resolve(__dirname,'..');
 const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.geojson':'application/geo+json'};
 async function scenario(page,base,reduced){
-
+  assert.equal(await page.locator('#congestion').textContent(),'FLOWING · 0% queued');
   await page.locator('#signal').click();assert.match(await page.locator('#signal-state').textContent(),/ALL RED/);
   for(let i=0;i<22;i++)await page.locator('#single-step').click();
   assert.equal(await page.locator('#signal-state').textContent(),'SOUTH GREEN');
@@ -56,3 +56,4 @@ async function main(){
   }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
 }
 main().catch(error=>{console.error(error);process.exitCode=1;});
+

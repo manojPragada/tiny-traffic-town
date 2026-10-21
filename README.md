@@ -18,7 +18,7 @@ Open http://127.0.0.1:8000. Keep the terminal running; Ctrl+C stops it. Serve ov
 
 ## Controls
 
-Request the other green direction to control the intersection, add cars, pause/resume, step 0.1 seconds, or reset. A switch first enters all-red for at least two simulated seconds, and only grants the requested green once committed vehicles leave the crossing zone. Upstream traffic waits at its stop line. The waiting count includes tightly queued followers. If paused, use Start or Step to advance signal clearance. Reduced motion disables animated running but keeps manual stepping; hiding the tab pauses the simulation.
+Request the other green direction to control the intersection, add cars, pause/resume, step 0.1 seconds, or reset. A switch first enters all-red for at least two simulated seconds, and only grants the requested green once committed vehicles leave the crossing zone. Upstream traffic waits at its stop line. The waiting count includes tightly queued followers. The congestion badge reports the queued share of active cars as clear, flowing, building (25%+) or heavy (60%+); it is a toy-model indicator, not a traffic-engineering measure. If paused, use Start or Step to advance signal clearance. Reduced motion disables animated running but keeps manual stepping; hiding the tab pauses the simulation.
 
 ## Project structure
 
@@ -59,7 +59,7 @@ npm test
 npm run check
 ```
 
-Node's built-in test runner checks model behavior. The check script validates JavaScript syntax; it is not a linter or a browser accessibility audit. No production build step is needed. Desktop/mobile browser checks, if completed, are recorded in ROADMAP.md; do not infer browser coverage from unit tests alone.
+Node's built-in test runner checks model behavior, including congestion thresholds. The check script validates JavaScript syntax; it is not a linter or a browser accessibility audit. No production build step is needed. Desktop/mobile browser checks, if completed, are recorded in ROADMAP.md; do not infer browser coverage from unit tests alone.
 
 ## Accessibility and performance
 
@@ -90,5 +90,6 @@ Use small, reviewable changes with a clear user benefit. Add model tests when be
 ## License
 
 A redistribution license has not yet been selected. Public visibility alone does not grant an open-source license.
+
 
 
