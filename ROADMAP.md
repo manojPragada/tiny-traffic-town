@@ -9,11 +9,14 @@
 
 ## Next
 
-- [ ] Add road editing with explicit node/edge topology
+- [x] Define and validate explicit node/edge topology for the existing junction
+- [ ] Add road editing on top of the explicit topology
 - [ ] Add car routing and collision-aware intersection occupancy
 - [ ] Add timed signal cycles and historical congestion charts
 
 ## Continuity
+
+2026-10-22: Introduced an immutable five-node/four-edge directed road graph, deterministic per-lane routes, topology validation, and a visible graph summary. Vehicles now expose their route edge IDs for inspection. Next: build a constrained editor on this foundation before expanding routing.
 
 2026-10-20: Added a live, accessible congestion badge derived from the existing queue model. It labels the queued share of active cars as clear, flowing, building or heavy; this remains explicitly simplified demo telemetry. Ten model tests, syntax checks and all three browser scenarios passed locally. Next: design explicit node/edge road topology before adding an editor.
 

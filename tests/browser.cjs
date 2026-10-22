@@ -7,6 +7,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE_PATH||'playwright');
 const root=path.resolve(__dirname,'..');
 const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.geojson':'application/geo+json'};
 async function scenario(page,base,reduced){
+  assert.equal(await page.locator('#network').textContent(),'5 nodes · 4 directed segments');assert.match(await page.locator('#cars rect').first().getAttribute('data-route'),/approach.*departure/);
   assert.equal(await page.locator('#congestion').textContent(),'FLOWING · 0% queued');
   await page.locator('#signal').click();assert.match(await page.locator('#signal-state').textContent(),/ALL RED/);
   for(let i=0;i<22;i++)await page.locator('#single-step').click();

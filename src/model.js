@@ -1,3 +1,18 @@
+export const roadTopology=Object.freeze({
+ nodes:Object.freeze([
+  Object.freeze({id:'west-entry',x:0,y:250}),Object.freeze({id:'junction',x:400,y:250}),Object.freeze({id:'east-exit',x:800,y:250}),
+  Object.freeze({id:'north-entry',x:400,y:0}),Object.freeze({id:'south-exit',x:400,y:500})
+ ]),
+ edges:Object.freeze([
+  Object.freeze({id:'east-approach',from:'west-entry',to:'junction',lane:'east',length:400}),Object.freeze({id:'east-departure',from:'junction',to:'east-exit',lane:'east',length:400}),
+  Object.freeze({id:'south-approach',from:'north-entry',to:'junction',lane:'south',length:250}),Object.freeze({id:'south-departure',from:'junction',to:'south-exit',lane:'south',length:250})
+ ])
+});
+export function routeForLane(lane,topology=roadTopology){return topology.edges.filter(edge=>edge.lane===lane);}
+export function validateRoadTopology(topology=roadTopology){
+ const nodeIds=new Set(topology?.nodes?.map(node=>node.id));
+ return Boolean(nodeIds?.size&&topology.edges?.length&&topology.edges.every(edge=>nodeIds.has(edge.from)&&nodeIds.has(edge.to)&&edge.from!==edge.to&&Number.isFinite(edge.length)&&edge.length>0));
+}
 export function initialState(){return {green:'east',targetGreen:'east',clearanceLeft:0,cars:[{id:1,lane:'east',position:120},{id:2,lane:'south',position:70}],completed:0,nextId:3};}
 export function spawn(state){if(state.cars.length>=20)return state;const lane=state.nextId%2?'east':'south';if(state.cars.some(c=>c.lane===lane&&c.position<35))return state;return {...state,nextId:state.nextId+1,cars:[...state.cars,{id:state.nextId,lane,position:0}]};}
 export function step(state,seconds){const dt=Number.isFinite(seconds)?Math.max(0,Math.min(seconds,.1)):0;const cars=[];let completed=state.completed;for(const lane of ['east','south']){let leader=Infinity;for(const car of state.cars.filter(c=>c.lane===lane).sort((a,b)=>b.position-a.position)){const stop=lane==='east'?330:180;let next=car.position+60*dt;if(state.green!==lane&&car.position<=stop)next=Math.min(next,stop);next=Math.min(next,leader-32);next=Math.max(car.position,next);leader=next;const end=lane==='east'?830:530;if(next>end)completed++;else cars.push({...car,position:next});}}let green=state.green,clearanceLeft=state.clearanceLeft??0;
