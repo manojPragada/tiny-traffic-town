@@ -9,6 +9,10 @@ export const roadTopology=Object.freeze({
  ])
 });
 export function routeForLane(lane,topology=roadTopology){return topology.edges.filter(edge=>edge.lane===lane);}
+export function routeSummary(lane,topology=roadTopology){
+ const edges=routeForLane(lane,topology);if(!edges.length)return null;
+ return {lane,edgeIds:edges.map(edge=>edge.id),nodeIds:[edges[0].from,...edges.map(edge=>edge.to)],length:edges.reduce((sum,edge)=>sum+edge.length,0)};
+}
 export function validateRoadTopology(topology=roadTopology){
  const nodeIds=new Set(topology?.nodes?.map(node=>node.id));
  return Boolean(nodeIds?.size&&topology.edges?.length&&topology.edges.every(edge=>nodeIds.has(edge.from)&&nodeIds.has(edge.to)&&edge.from!==edge.to&&Number.isFinite(edge.length)&&edge.length>0));

@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-22: Added a route inspector that exposes ordered graph nodes, total model length and the vehicles assigned to each lane. This is read-only groundwork for a constrained editor; topology and road geometry remain immutable. Next: safely edit one segment property without breaking route validation or simulation reset.
+
 2026-10-22: Introduced an immutable five-node/four-edge directed road graph, deterministic per-lane routes, topology validation, and a visible graph summary. Vehicles now expose their route edge IDs for inspection. Next: build a constrained editor on this foundation before expanding routing.
 
 2026-10-20: Added a live, accessible congestion badge derived from the existing queue model. It labels the queued share of active cars as clear, flowing, building or heavy; this remains explicitly simplified demo telemetry. Ten model tests, syntax checks and all three browser scenarios passed locally. Next: design explicit node/edge road topology before adding an editor.

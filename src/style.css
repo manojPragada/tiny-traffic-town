@@ -2,6 +2,7 @@
 
 :root{--accent:#b4e7aa}.town{position:relative;border-radius:14px;overflow:hidden;border:1px solid #598062}.town-caption{position:absolute;left:16px;bottom:12px;font:9px ui-monospace,monospace;letter-spacing:2px;color:#d1e2c5}.town svg{aspect-ratio:8/5}
 .congestion{display:inline-block;margin-top:8px;border-left:3px solid var(--accent);padding:7px 11px;background:#101d2a;color:var(--accent);font:11px/1.4 ui-monospace,monospace;letter-spacing:1.5px}.congestion[data-level=building]{border-color:#f8c17f;color:#f8c17f}.congestion[data-level=heavy]{border-color:#ff786c;color:#ff9d94}
+.route-inspector{display:grid;gap:.45rem;margin:1rem 0}.route-inspector select{width:100%}.route-inspector output{overflow-wrap:anywhere}.route-focus{stroke:#fff;stroke-width:3}
 
 
 

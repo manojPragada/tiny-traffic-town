@@ -8,6 +8,7 @@ const root=path.resolve(__dirname,'..');
 const mime={'.html':'text/html','.css':'text/css','.js':'text/javascript','.geojson':'application/geo+json'};
 async function scenario(page,base,reduced){
   assert.equal(await page.locator('#network').textContent(),'5 nodes · 4 directed segments');assert.match(await page.locator('#cars rect').first().getAttribute('data-route'),/approach.*departure/);
+  assert.match(await page.locator('#route-summary').textContent(),/west-entry → junction → east-exit · 800 units/);await page.locator('#route-focus').selectOption('south');assert.match(await page.locator('#route-summary').textContent(),/north-entry → junction → south-exit · 500 units/);assert.equal(await page.locator('#cars rect[data-lane="south"]').getAttribute('class'),'route-focus');
   assert.equal(await page.locator('#congestion').textContent(),'FLOWING · 0% queued');
   await page.locator('#signal').click();assert.match(await page.locator('#signal-state').textContent(),/ALL RED/);
   for(let i=0;i<22;i++)await page.locator('#single-step').click();
