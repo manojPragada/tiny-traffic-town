@@ -18,7 +18,7 @@ Open http://127.0.0.1:8000. Keep the terminal running; Ctrl+C stops it. Serve ov
 
 ## Controls
 
-Request the other green direction to control the intersection, add cars, pause/resume, step 0.1 seconds, or reset. A switch first enters all-red for at least two simulated seconds, and only grants the requested green once committed vehicles leave the crossing zone. Upstream traffic waits at its stop line. The waiting count includes tightly queued followers. The road-graph readout describes the current immutable demo network (five nodes and four directed segments); each car follows one of two explicit two-edge routes. The route inspector exposes each ordered node path and total model length while outlining vehicles on that lane. It is inspection tooling for the future editor, not editing yet. The congestion badge reports the queued share of active cars as clear, flowing, building (25%+) or heavy (60%+); it is a toy-model indicator, not a traffic-engineering measure. If paused, use Start or Step to advance signal clearance. Reduced motion disables animated running but keeps manual stepping; hiding the tab pauses the simulation.
+Request the other green direction to control the intersection, add cars, pause/resume, step 0.1 seconds, or reset. A switch first enters all-red for at least two simulated seconds, and only grants the requested green once committed vehicles leave the crossing zone. Upstream traffic waits at its stop line. The waiting count includes tightly queued followers. The road-graph readout describes the demo network (five nodes and four directed segments); each car follows one of two explicit two-edge routes. The route inspector exposes each ordered node path and total model length while outlining vehicles on that lane. Its constrained editor changes one segment's model length between 10 and 2,000 units without mutating the bundled graph; this intentionally changes route metrics only, not the SVG road or vehicle physics. Reset graph restores the bundled values, while Reset town restores both simulation and graph. The congestion badge reports the queued share of active cars as clear, flowing, building (25%+) or heavy (60%+); it is a toy-model indicator, not a traffic-engineering measure. If paused, use Start or Step to advance signal clearance. Reduced motion disables animated running but keeps manual stepping; hiding the tab pauses the simulation.
 
 ## Project structure
 
@@ -34,7 +34,7 @@ ROADMAP.md         completed work and next priorities
 
 ## Architecture and configuration
 
-Vanilla ES modules keep the initial product runnable without a package install. The UI and pure model logic are separated. `roadTopology` is a validated, immutable node/edge graph; `routeForLane` derives the two current routes from it. This is the model foundation for a future editor, not yet an editable network. Relative asset URLs support hosting from a repository subdirectory. There are no environment variables or secrets; .env.example records this intentionally empty configuration contract.
+Vanilla ES modules keep the initial product runnable without a package install. The UI and pure model logic are separated. `roadTopology` is a validated, immutable node/edge graph; `routeForLane` derives the two current routes from it and `withEdgeLength` creates a bounded validated copy for the session-only metric editor. Relative asset URLs support hosting from a repository subdirectory. There are no environment variables or secrets; .env.example records this intentionally empty configuration contract.
 
 ## Verification
 
