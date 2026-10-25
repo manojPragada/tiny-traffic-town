@@ -10,11 +10,13 @@
 ## Next
 
 - [x] Define and validate explicit node/edge topology for the existing junction
-- [ ] Add road editing on top of the explicit topology (bounded segment-length editor complete)
+- [ ] Add road editing on top of the explicit topology (length and node-preview editors complete)
 - [ ] Add car routing and collision-aware intersection occupancy
 - [ ] Add timed signal cycles and historical congestion charts
 
 ## Continuity
+
+2026-10-24: Added bounded node-coordinate editing with a connected SVG geometry preview. It deliberately leaves the static road art and vehicle/collision physics unchanged and says so in the interface. Next: reconcile editable geometry with lane paths before calling this a road drawer.
 
 2026-10-23: Added the first constrained graph edit: a validated, session-only segment-length change with graph/town reset and an explicit warning that SVG geometry and physics remain fixed. Next: coordinate editing with collision-free geometry preview before this can become a true road drawer.
 
