@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-26: Added an explicit preview-pixel-to-model-unit comparison so geometry and route-metric edits can be reconciled instead of silently drifting. Next: establish one geometry scale before connecting edits to lane physics.
+
 2026-10-25: Added measured SVG preview geometry totals and per-segment lengths, making the difference between edited coordinates and fixed vehicle physics inspectable. Next: reconcile preview geometry with lane paths before calling this a road drawer.
 
 2026-10-24: Added bounded node-coordinate editing with a connected SVG geometry preview. It deliberately leaves the static road art and vehicle/collision physics unchanged and says so in the interface. Next: reconcile editable geometry with lane paths before calling this a road drawer.
