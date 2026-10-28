@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-27: Added a visible aligned/model-longer/preview-longer state using a 10% tolerance, making geometry drift immediately legible. Next: establish one geometry scale before connecting edits to lane physics.
+
 2026-10-26: Added an explicit preview-pixel-to-model-unit comparison so geometry and route-metric edits can be reconciled instead of silently drifting. Next: establish one geometry scale before connecting edits to lane physics.
 
 2026-10-25: Added measured SVG preview geometry totals and per-segment lengths, making the difference between edited coordinates and fixed vehicle physics inspectable. Next: reconcile preview geometry with lane paths before calling this a road drawer.
