@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {roadTopology,withNodePosition,withGeometryLengths,geometryAlignment} from '../src/model.js';
+test('withGeometryLengths reconciles rounded preview and model scales',()=>{const moved=withNodePosition(roadTopology,'east-exit',700,250),synced=withGeometryLengths(moved);assert.equal(geometryAlignment(synced),'ALIGNED');assert.equal(synced.edges.find(edge=>edge.id==='east-departure').length,300);});

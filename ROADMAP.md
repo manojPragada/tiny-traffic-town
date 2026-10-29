@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-28: Added an explicit action that reconciles model segment lengths to rounded preview geometry while keeping vehicle physics limitations visible. Next: establish a shared geometry scale before wiring edits into lane paths.
+
 2026-10-27: Added a visible aligned/model-longer/preview-longer state using a 10% tolerance, making geometry drift immediately legible. Next: establish one geometry scale before connecting edits to lane physics.
 
 2026-10-26: Added an explicit preview-pixel-to-model-unit comparison so geometry and route-metric edits can be reconciled instead of silently drifting. Next: establish one geometry scale before connecting edits to lane physics.
