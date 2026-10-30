@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-29: Added a tested route-level model-versus-preview length and drift model for the route inspector. Next: render it in the UI, then establish a shared geometry scale before wiring edits into lane paths.
+
 2026-10-28: Added an explicit action that reconciles model segment lengths to rounded preview geometry while keeping vehicle physics limitations visible. Next: establish a shared geometry scale before wiring edits into lane paths.
 
 2026-10-27: Added a visible aligned/model-longer/preview-longer state using a 10% tolerance, making geometry drift immediately legible. Next: establish one geometry scale before connecting edits to lane physics.
