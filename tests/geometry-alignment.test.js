@@ -1,0 +1,1 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {geometryAlignment,roadTopology,withEdgeLength} from '../src/model.js';test('geometry alignment exposes scale drift',()=>{assert.equal(geometryAlignment(roadTopology),'ALIGNED');assert.equal(geometryAlignment(withEdgeLength(roadTopology,'east-approach',2000)),'MODEL LONGER');});
