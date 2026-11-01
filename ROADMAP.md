@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-10-31: Expressed each inspected route's preview length on the network-wide preview-pixel/model-unit scale and exposed its remaining local residual. This makes nonuniform geometry drift visible before editable paths are allowed to affect physics. Next: define how shared scale and local residuals constrain lane-path editing.
+
 2026-10-30: Rendered the tested route-level model length, preview length and signed drift in the route inspector, updating immediately after graph edits. Next: establish a shared geometry scale before wiring edits into lane paths.
 
 2026-10-29: Added a tested route-level model-versus-preview length and drift model for the route inspector. Next: render it in the UI, then establish a shared geometry scale before wiring edits into lane paths.
