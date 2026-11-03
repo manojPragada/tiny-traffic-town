@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-11-02: Rendered the tested local calibration label in the route inspector so aligned, preview-long and model-long residuals are visible immediately after edits. Next: define how this state constrains lane-path editing before it can affect physics.
+
 2026-11-01: Added a tested local residual classifier on top of the shared network geometry calibration, distinguishing aligned, preview-long and model-long routes with a bounded tolerance. Next: render this label before editable geometry can affect lane physics.
 
 2026-10-31: Expressed each inspected route's preview length on the network-wide preview-pixel/model-unit scale and exposed its remaining local residual. This makes nonuniform geometry drift visible before editable paths are allowed to affect physics. Next: define how shared scale and local residuals constrain lane-path editing.
