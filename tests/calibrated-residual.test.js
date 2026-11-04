@@ -1,2 +1,3 @@
-import {test} from 'node:test';import assert from 'node:assert/strict';import {calibratedResidualLabel} from '../src/model.js';
+import {test} from 'node:test';import assert from 'node:assert/strict';import {calibratedResidualLabel,calibratedResidualDistance} from '../src/model.js';
 test('calibrated residual is classified with tolerance',()=>{assert.equal(calibratedResidualLabel({residual:4}),'locally aligned');assert.equal(calibratedResidualLabel({residual:6}),'locally preview-long');assert.equal(calibratedResidualLabel({residual:-6}),'locally model-long');assert.equal(calibratedResidualLabel(null),'calibration unavailable');});
+test('calibrated residual distance measures only excess beyond tolerance',()=>{assert.equal(calibratedResidualDistance({residual:4}),0);assert.equal(calibratedResidualDistance({residual:8}),3);assert.equal(calibratedResidualDistance({residual:-9}),4);assert.equal(calibratedResidualDistance(null),null);});

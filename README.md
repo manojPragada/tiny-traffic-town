@@ -4,7 +4,7 @@ A miniature browser junction simulation with traffic signals, deterministic cars
 
 **Status:** working static prototype, no hosted deployment. See limitations below. This project uses no external assets, fonts, runtime dependencies, API keys or paid services.
 
-Current geometry increment: the route inspector now renders calibrated residuals as locally aligned, preview-long or model-long before physics integration.
+Current geometry increment: the route inspector renders calibration direction and the remaining distance outside alignment before physics integration.
 
 ## Quick start
 
