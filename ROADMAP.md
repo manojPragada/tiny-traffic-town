@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-11-04: Added the calibrated residual as a percentage of the inspected route's model length, making local geometry drift comparable across routes without affecting vehicle physics. Next: define how this state constrains lane-path editing before it can affect physics.
+
 2026-11-03: Added the exact calibrated distance outside the local alignment tolerance to the route inspector. This makes the classification actionable without wiring editable geometry into physics. Next: define how this state constrains lane-path editing before it can affect physics.
 
 2026-11-02: Rendered the tested local calibration label in the route inspector so aligned, preview-long and model-long residuals are visible immediately after edits. Next: define how this state constrains lane-path editing before it can affect physics.
