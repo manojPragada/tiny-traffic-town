@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-11-06: Added tested selected-route preview reconciliation, updating only the inspected lane's model lengths while leaving the other route and vehicle physics unchanged. Next: define a reversible lane-path editor before any geometry can influence physics.
+
 2026-11-05: Added a tested advisory preview-fit gate to the route inspector. It opens only while the selected route's calibrated residual is within tolerance and remains explicitly disconnected from vehicle physics. Next: use this gate when a lane-path editor exists; do not treat it as a traffic-safety validation.
 
 2026-11-04: Added the calibrated residual as a percentage of the inspected route's model length, making local geometry drift comparable across routes without affecting vehicle physics. Next: define how this state constrains lane-path editing before it can affect physics.
