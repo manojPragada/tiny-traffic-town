@@ -1,0 +1,2 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {calibratedRouteGeometry,roadTopology} from '../src/model.js';
+test('route geometry is expressed on the shared preview-to-model scale',()=>{const value=calibratedRouteGeometry('east',roadTopology);assert.equal(value.residual,value.calibrated-value.model);assert.ok(Number.isInteger(value.calibrated));assert.equal(calibratedRouteGeometry('missing',roadTopology),null);});
