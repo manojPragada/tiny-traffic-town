@@ -4,7 +4,7 @@ A miniature browser junction simulation with traffic signals, deterministic cars
 
 **Status:** working static prototype, no hosted deployment. See limitations below. This project uses no external assets, fonts, runtime dependencies, API keys or paid services.
 
-Current geometry increment: a tested selected-route reconciliation action can copy rounded preview lengths into only the inspected lane while leaving the other route and all vehicle physics unchanged.
+Current geometry increment: graph edits now have a one-level Undo action backed by tested topology comparison. Reverting model lengths or preview coordinates still leaves vehicle paths and physics unchanged.
 
 ## Quick start
 

@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-11-07: Added a one-level Undo graph edit action backed by tested topology comparison, covering length, coordinate and preview-reconciliation edits without changing vehicle physics. Next: expand this reversible foundation into a bounded lane-path editor before geometry can influence physics.
+
 2026-11-06: Added tested selected-route preview reconciliation, updating only the inspected lane's model lengths while leaving the other route and vehicle physics unchanged. Next: define a reversible lane-path editor before any geometry can influence physics.
 
 2026-11-05: Added a tested advisory preview-fit gate to the route inspector. It opens only while the selected route's calibrated residual is within tolerance and remains explicitly disconnected from vehicle physics. Next: use this gate when a lane-path editor exists; do not treat it as a traffic-safety validation.
