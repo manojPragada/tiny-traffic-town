@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {roadTopology,withNodePosition,routeGeometrySummary} from '../src/model.js';
+test('route geometry reports route-level preview drift',()=>{assert.deepEqual(routeGeometrySummary('east',roadTopology),{lane:'east',model:800,preview:800,difference:0});const moved=withNodePosition(roadTopology,'east-exit',700,250);assert.equal(routeGeometrySummary('east',moved).difference,-100);assert.equal(routeGeometrySummary('missing',moved),null);});
