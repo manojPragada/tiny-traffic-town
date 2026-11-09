@@ -16,6 +16,8 @@
 
 ## Continuity
 
+2026-11-08: Extended the tested one-level graph history with Redo. Undo retains the reverted edit, while a new edit clears redo and full town reset clears both directions; vehicle physics remain unchanged. Next: expand this reversible foundation into a bounded lane-path editor before geometry can influence physics.
+
 2026-11-07: Added a one-level Undo graph edit action backed by tested topology comparison, covering length, coordinate and preview-reconciliation edits without changing vehicle physics. Next: expand this reversible foundation into a bounded lane-path editor before geometry can influence physics.
 
 2026-11-06: Added tested selected-route preview reconciliation, updating only the inspected lane's model lengths while leaving the other route and vehicle physics unchanged. Next: define a reversible lane-path editor before any geometry can influence physics.
