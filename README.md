@@ -1,7 +1,7 @@
 # Tiny Traffic Town
 A playful browser traffic laboratory built around a working four-way junction.
 
-**Status:** playable foundation. Vehicles spawn from four approaches, obey exclusive signal phases, queue at red, cross on green and update throughput/wait metrics. Demand, pause, manual phase advance and reset controls work. Road editing and routing are future work; there is no hosted demo.
+**Status:** playable foundation. Vehicles spawn from four approaches, obey exclusive signal phases, queue at red, cross on green and update throughput/wait metrics. A separate constrained 5×5 road workshop validates connected edits; routing those layouts is future work. There is no hosted demo.
 
 ## Run and verify
 Requires Node.js 22+ and npm 11+.
@@ -18,6 +18,7 @@ npm run build
 - Advance to the next safe phase (`NS green → NS yellow → EW green → EW yellow`).
 - Adjust demand from 15–100%; the simulator caps active cars to protect performance.
 - Reset vehicles, throughput, delay and phase.
+- Add adjacent road tiles in the workshop; disconnected edits are rejected.
 
 Reduced-motion visitors start paused. The canvas animation never starts audio, accesses location or sends network requests.
 

@@ -1,0 +1,2 @@
+import{describe,expect,it}from'vitest';import{cellKey,isConnected,starterRoads,toggleRoad}from'./roadGrid'
+describe('road grid',()=>{it('allows adjacent construction',()=>{const edit=toggleRoad(starterRoads(),cellKey(2,0));expect(edit.changed).toBe(true);expect(isConnected(edit.roads)).toBe(true)});it('rejects isolated construction',()=>expect(toggleRoad(starterRoads(),cellKey(0,0)).changed).toBe(false));it('prevents a removal that disconnects a branch',()=>{const roads=starterRoads();roads.add(cellKey(2,0));expect(toggleRoad(roads,cellKey(2,1)).changed).toBe(false)})})
