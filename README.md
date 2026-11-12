@@ -1,7 +1,7 @@
 # Tiny Traffic Town
 A playful browser traffic laboratory built around a working four-way junction.
 
-**Status:** playable foundation. Vehicles spawn from four approaches, obey exclusive signal phases, queue at red, cross on green and update throughput/wait metrics plus per-approach queue bars. A separate constrained 5×5 road workshop validates connected edits; routing those layouts is future work. There is no hosted demo.
+**Status:** playable foundation. Vehicles spawn from four approaches, obey exclusive signal phases, queue at red, cross on green and update throughput/wait metrics plus per-approach queue bars. A separate constrained 5×5 road workshop validates connected edits and previews a deterministic terminal-to-terminal route; live vehicles do not use edited roads yet. There is no hosted demo.
 
 ## Run and verify
 Requires Node.js 22+ and npm 11+.
@@ -20,6 +20,7 @@ npm run build
 - Reset vehicles, throughput, delay and phase.
 - Compare the north, east, south and west stopped queues in the pressure board.
 - Add adjacent road tiles in the workshop; disconnected edits are rejected.
+- Preview the deterministic shortest route between the workshop's first and last terminal tiles.
 
 Reduced-motion visitors start paused. The canvas animation never starts audio, accesses location or sends network requests.
 
@@ -27,6 +28,8 @@ Reduced-motion visitors start paused. The canvas animation never starts audio, a
 ```text
 src/engine.ts       pure signal, vehicle, per-approach queue and metric transitions
 src/queueBoard.*    responsive per-approach queue visualization
+src/roadGrid.*      connected road editing and deterministic route search
+src/roadWorkshop.*  accessible workshop controls and route preview
 src/main.ts         canvas renderer, controls and animation loop
 src/styles.css      responsive town/control presentation
 src/engine.test.ts  signal safety, queue and completion tests

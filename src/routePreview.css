@@ -1,0 +1,5 @@
+.route-preview{margin-top:14px;padding:11px 14px;border:1px solid #ffdb6e;background:transparent;color:#ffefb4;font:11px monospace;cursor:pointer}
+.route-preview:hover,.route-preview:focus-visible{background:#ffdb6e;color:#102a30}
+.route-preview:disabled{cursor:not-allowed;opacity:.5}
+.road-grid button[data-route=true]{outline:3px solid #ffdb6e;outline-offset:-4px}
+.road-grid button[data-route=true] i,.road-grid button[data-route=true] i:after{background:#ffdb6e}
